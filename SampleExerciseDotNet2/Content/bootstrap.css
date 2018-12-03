@@ -1407,6 +1407,25 @@ a.bg-danger:hover,
 a.bg-danger:focus {
   background-color: #e4b9b9;
 }
+
+.bg-normal {
+    background-color: #ccc;
+}
+
+a.bg-normal:hover,
+a.bg-normal:focus {
+    background-color: #ccc;
+}
+
+.bg-normalInside {
+    background-color: #eee;
+}
+
+a.bg-normalInside:hover,
+a.bg-normalInside:focus {
+    background-color: #eee;
+}
+
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;

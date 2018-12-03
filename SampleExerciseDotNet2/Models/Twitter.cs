@@ -37,5 +37,6 @@ namespace SampleExerciseDotNet2.Models
             }
             return enumerableTwitts.Select(t => (string)(t["id"].ToString() + "-~- " + t["text"].ToString()));
         }
+
     }
 }

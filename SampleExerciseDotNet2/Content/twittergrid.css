@@ -1,0 +1,33 @@
+﻿
+.tweetgrid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 5px;
+}
+
+.tweetgrid-item {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 1px;
+    padding: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.tweetgrid-item a {
+    text-decoration: none;
+}
+
+.tweetgrid-item:hover {
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .tweetgrid-container {
+        display: inline-table;
+    }
+
+    .tweetgrid-item {
+        display: block;
+    }
+}

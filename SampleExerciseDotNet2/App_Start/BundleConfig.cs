@@ -24,6 +24,7 @@ namespace SampleExerciseDotNet2
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/twittergrid.css",
                       "~/Content/site.css"));
         }
     }

@@ -1,9 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "Home";
+    ViewBag.Title = ViewBag.CompanyName + " Social Media Center";
 }
 
 <div class="jumbotron">
+
+    <img src="~/Content/images/@(ViewBag.CompanyName).png" style="margin-left: -22px;" />
+
     <h2>@ViewBag.CompanyName Social Media Center</h2>
     <p class="lead">Get the latest Tweets from Twitter.</p>
     <p>

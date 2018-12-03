@@ -286,3 +286,4 @@ C:\Users\brian\Documents\GitHub\SampleExerciseDotNet2\SampleExerciseDotNet2\obj\
 C:\Users\brian\Documents\GitHub\SampleExerciseDotNet2\SampleExerciseDotNet2\obj\Debug\SampleExerciseDotNet2.csproj.CopyComplete
 C:\Users\brian\Documents\GitHub\SampleExerciseDotNet2\SampleExerciseDotNet2\obj\Debug\SampleExerciseDotNet2.dll
 C:\Users\brian\Documents\GitHub\SampleExerciseDotNet2\SampleExerciseDotNet2\obj\Debug\SampleExerciseDotNet2.pdb
+C:\Users\brian\Documents\GitHub\SampleExerciseDotNet2\SampleExerciseDotNet2\obj\Debug\SampleExerciseDotNet2.csprojAssemblyReference.cache

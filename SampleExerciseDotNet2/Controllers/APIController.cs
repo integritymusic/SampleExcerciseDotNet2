@@ -23,7 +23,7 @@ namespace SampleExerciseDotNet2.Controllers
                 ViewBag.CompanyName = companyName.ToUpper();
 
                 Twitter twitter = new Twitter();
-                IEnumerable<string> tweets = twitter.GetTweets(companyName, 10).Result;
+                IEnumerable<string> tweets = twitter.GetTweets(companyName, 9).Result;
 
                 foreach (var t in tweets)
                 {
