@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1><h2>@ViewBag.CompanyName Social Media Center</h2></h1>
+    <p class="lead">Get the latest Tweets from Twitter.</p>
+    <p>
+        @using (Html.BeginForm("QueryTweets", "API"))
+        {
+            <input type="submit" value="GO!" class="btn btn-primary btn-lg" />
+        }
+
+    </p>
+</div>
+
+
