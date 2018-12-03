@@ -9,8 +9,8 @@ namespace SampleExerciseDotNet2.Controllers
 {
     public class HomeController : Controller
     {
+        //Dependency Injection Example - Stubbed out Company finder service
         private ICompanyService icompanyservice;
-
         public HomeController(ICompanyService icompanyservice)
         {
             this.icompanyservice = icompanyservice;
@@ -24,22 +24,5 @@ namespace SampleExerciseDotNet2.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult QueryTweets()
-        {
-            return View();
-        }
     }
 }

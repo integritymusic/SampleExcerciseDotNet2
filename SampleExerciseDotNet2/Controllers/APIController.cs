@@ -1,25 +1,13 @@
-﻿using System.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Web;
 using System.Web.Mvc;
 using SampleExerciseDotNet2.Models;
-using SampleExerciseDotNet2.Service;
 
 namespace SampleExerciseDotNet2.Controllers
 {
     public class APIController : Controller
     {
-        private ICompanyService icompanyservice;
-
-        public APIController(ICompanyService icompanyservice)
-        {
-            this.icompanyservice = icompanyservice;
-        }
-
-        // GET: Broadcast
+        // GET
         public ActionResult Index()
         {
             return View();
@@ -27,24 +15,29 @@ namespace SampleExerciseDotNet2.Controllers
 
         public ActionResult QueryTweets()
         {
-            //to do try catch
-
-            string companyName = this.icompanyservice.GetCompany();
-            ViewBag.CompanyName = companyName.ToUpper();
-
-            Twitter twitter = new Twitter();
-            IEnumerable<string> tweets = twitter.GetTweets(companyName, 10).Result;
-
             var model = new List<Tweets>();
 
-            foreach (var t in tweets)
+            try
             {
-                Tweets Tweet = new Tweets();
+                string companyName = Request.QueryString["company"];
+                ViewBag.CompanyName = companyName.ToUpper();
 
-                Tweet.Text = t.Substring(t.IndexOf("-~-")+3);
-                Tweet.Username = companyName;
-                Tweet.Url = "https://twitter.com/" + companyName + "/status/" + t.Substring(0, t.IndexOf("-~-"));
-                model.Add(Tweet);
+                Twitter twitter = new Twitter();
+                IEnumerable<string> tweets = twitter.GetTweets(companyName, 10).Result;
+
+                foreach (var t in tweets)
+                {
+                    Tweets Tweet = new Tweets();
+
+                    Tweet.Text = t.Substring(t.IndexOf("-~-") + 3);
+                    Tweet.Username = companyName;
+                    Tweet.Url = "https://twitter.com/" + companyName + "/status/" + t.Substring(0, t.IndexOf("-~-"));
+                    model.Add(Tweet);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Log the Message in the Database with ex.Message
             }
 
             return View(model);
